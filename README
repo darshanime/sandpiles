@@ -1,15 +1,4 @@
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1. Generalized Sandpiles</a></li>
-<li><a href="#sec-2">2. Generalized sandpiles</a></li>
-<li><a href="#sec-3">3. Interactive script</a></li>
-</ul>
-</div>
-</div>
-
-# Generalized Sandpiles<a id="sec-1" name="sec-1"></a>
+## Generalized Sandpiles
 
 Sandpiles are a very interesting construct to play with. Guided by 2 simple rules, they make for fun(noticed the alliteration?) visualizations. 
 
@@ -17,22 +6,22 @@ Here are the vanilla sandpile rules:
 1.  You have a grid of blocks (may or may not be a square). Each square in the grid can hold maximum of 3 sand particles.
 2.  When any grid exceeds 3 sand particles, they topple
 
-![img](./sandpiles_1.png)
+![img](https://github.com/darshanime/sandpiles/blob/master/images/sandpiles_1.png =250x250)
 
-![img](./sandpiles_2.png)
+![img](https://github.com/darshanime/sandpiles/blob/master/images/sandpiles_2.png =250x250)
 
-![img](./sandpiles_3.png)
+![img](https://github.com/darshanime/sandpiles/blob/master/images/sandpiles_3.png =250x250)
 
 This happens forever until we have a stable sandpile. Pretty neat eh?
 
-# Generalized sandpiles<a id="sec-2" name="sec-2"></a>
+## Generalized sandpiles
 
 In this project, I have generalized the maximum that any square can hold. So, you can choose the maximum for any one square to be say, 10 while everone else is at 3. This can make for some pretty graphics when done on a large sandpile.
 
-# Interactive script<a id="sec-3" name="sec-3"></a>
+## Interactive script
 
-Try the \`interactive.py\` script for a flavor of the sandpile simulation (and to tire your fingers)
-
+Try the `interactive.py` script for a flavor of the sandpile simulation (and to tire your fingers)
+```bash
     $ python interactive.py
     Enter dimensions of grid (eg, 4x4):
     2x2
@@ -54,8 +43,9 @@ Try the \`interactive.py\` script for a flavor of the sandpile simulation (and t
     7
     
     Ran for 4 iterations
-
+```
 The script will produce this image
 
-![img](./sandpiles_4.png)
+![img](https://github.com/darshanime/sandpiles/blob/master/images/sandpiles_4.png)
+
 Inspired by this amazing video - <https://www.youtube.com/watch?v=1MtEUErz7Gg>
