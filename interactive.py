@@ -37,7 +37,6 @@ def plot(pile):
 
     # printing the sand count in the plot
     it = np.nditer(numpy_array, flags=['multi_index'])
-    print(numpy_array)
     while not it.finished:
         plt.text(it.multi_index[1], it.multi_index[0], int(it[0]), va='center', ha='center')
         it.iternext()
