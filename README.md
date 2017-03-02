@@ -54,7 +54,32 @@ The script will produce this image
 ![img](https://github.com/darshanime/sandpiles/blob/master/images/sandpiles_4.png)
 
 
+or print labels too:
+```python
+In [1]: pile = sandpile(size="10x50", initial_max=10, initial_min=10)
+In [2]: run_pile(pile, labels=True)
+Ran for 139 iterations
+```
+
+![img](https://github.com/darshanime/sandpiles/blob/master/images/sandpiles_5.png)
+
+
 ## Implementation details
+
+### `sandpile` definition
+
+Define a sandpile by giving the dimensions and characteristics of the grid. The max of each square in the grid is chosen by random and lies between `sand_min` and `sand_max`. The initial sand grains on each square are chosen randomly too and lie between `initial_min` and `initial_max`
+
+`sandpile` argument signature:
+```python
+sandpile(size="3x3", sand_min=3, sand_max=3, initial_min=10, initial_max=10):
+```
+
+Also, `run_pile` can print labels on the image if required
+`run_pile` argument signature:
+```python
+run_pile(pile, save=False, labels=False):
+```
 
 ### `pile` structure
 - The primary data structure used is the `pile` hashtable (python dict). It is *1-indexed*, and has the following structure:

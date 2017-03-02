@@ -8,6 +8,13 @@ pile = defaultdict(dict)
 
 
 def sandpile(size="3x3", sand_min=3, sand_max=3, initial_min=10, initial_max=10):
+    """
+    size --> the dimensions of the grid. Can be rectangles
+    sand_min --> the minimum capacity of any square
+    sand_max --> the maximum capacity of any square
+    initial_min --> the minimum initial sand on any square
+    initial_max --> the maximum initial sand on any square
+    """
     try:
         r, c = map(int, size.strip().split('x'))
         pile["r"] = r
@@ -76,11 +83,6 @@ def pad_pile(pile):
         pile[(row, c+1)]["#"] = 0
 
     return pile
-
-    # for row in range(r+2):
-    #     for col in range(c+2):
-    #         pile[(row, col)]["max"] = 0
-    #         pile[(row, col)]["#"] = 0
 
 
 def unpad_pile(pile):
