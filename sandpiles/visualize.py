@@ -29,31 +29,58 @@ def sandpile(size="3x3", sand_min=3, sand_max=3, initial_min=10, initial_max=10)
     return pile
 
 
-def run_pile(pile, save=False, labels=False):
+def run_pile(pile, picture=False, labels=False, gif=False):
     pad_pile(pile)
     count = 0
     while pile_unstable(pile):
+
+        if gif:
+            make_snap(pile, count)
+
         count += 1
         collapse_pile(pile)
 
+    if gif:
+        make_snap(pile, count)
+        if create_gif():
+            print("Created sandpiles.gif")
+        else:
+            print("Could not create sandpiles.gif")
+
     unpad_pile(pile)
     print("Ran for %i iterations" % count)
-    plot(pile, save, labels)
+    plt = plot(pile, labels)
+    if picture:
+        plt.colorbar(orientation='horizontal')
+        plt.savefig('./sandpiles.png', bbox_inches='tight')
 
 
-def plot(pile, save, labels):
+def create_gif():
+    with imageio.get_writer('./sandpiles.gif', mode='I', duration=0.33) as writer:
+        for filename in glob.glob('/tmp/sandpile_*.png'):
+            image = imageio.imread(filename)
+            writer.append_data(image)
+            # the image is in memory, can be deleted on disk
+            os.remove(filename)
+    return True
+
+
+def make_snap(pile, count):
+    plt = plot(pile, labels=False)
+    filename = "/tmp/sandpile_%s.png" % count
+    plt.savefig(filename, bbox_inches='tight')
+
+
+def plot(pile, labels):
     numpy_array = convert_to_numpy_array(pile)
     plt.matshow(numpy_array, cmap=plt.get_cmap('gist_rainbow'))
-    plt.colorbar(orientation='horizontal')
     plt.axis('off')
     if labels:
         it = np.nditer(numpy_array, flags=['multi_index'])
         while not it.finished:
             plt.text(it.multi_index[1], it.multi_index[0], int(it[0]), va='center', ha='center')
             it.iternext()
-    if save:
-        plt.savefig("./sandpile.png", bbox_inches='tight')
-    plt.show()
+    return plt
 
 
 def convert_to_numpy_array(pile):
