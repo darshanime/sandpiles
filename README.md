@@ -1,6 +1,6 @@
 ## Generalized Sandpiles
 
-<img src="https://github.com/darshanime/sandpiles/blob/gifs!/images/sandpiles.gif" width="500" height="250">
+<img src="https://github.com/darshanime/sandpiles/blob/master/images/sandpiles.gif" width="500" height="250">
 
 Sandpiles are a very interesting construct to play with. Guided by 2 simple rules, they make _for fun_ (noticed the alliteration?) visualizations. 
 
