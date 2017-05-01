@@ -14,6 +14,6 @@ setup(
     license = "LICENSE.txt",
     classifiers = [],
     install_requires=[
-        "matplotlib==2.0.0", "numpy==1.12.0"
+        "matplotlib==2.0.0", "numpy==1.12.0", "imageio==2.1.2"
     ]
 )
