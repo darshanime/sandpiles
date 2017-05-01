@@ -1,5 +1,7 @@
 ## Generalized Sandpiles
 
+<img src="https://github.com/darshanime/sandpiles/blob/gifs!/images/sandpiles.gif" width="500" height="250">
+
 Sandpiles are a very interesting construct to play with. Guided by 2 simple rules, they make _for fun_ (noticed the alliteration?) visualizations. 
 
 Here are the vanilla sandpile rules:
@@ -27,6 +29,33 @@ $ pip install sandpiles
 ```
 
 ## Demo visualization
+
+### Gifs
+
+The gif above is created with 100 grains on the four corners of a 6x12 board. It ran for 29 iterations before stabilizing.
+
+```python
+
+In [1]: from sandpiles.visualize import sandpile, run_pile, create_gif
+
+In [2]: pile = sandpile(size="6x12", initial_max=0, initial_min=0)
+
+In [3]: pile[(1, 12)]["#"] = 100
+
+In [4]: pile[(6, 1)]["#"] = 100
+
+In [5]: pile[(6, 12)]["#"] = 100
+
+In [6]: pile[(1, 1)]["#"] = 100
+
+In [7]: run_pile(pile, picture=False, gif=True)
+Created sandpiles.gif
+Ran for 29 iterations
+
+```
+
+### Images
+
 
 Use it like so:
 
