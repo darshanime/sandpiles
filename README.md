@@ -100,7 +100,7 @@ defaultdict(dict,
 ```
 
 So, each square in the grid has 2 parameters -
- - # --> the number of sand grains on that square
+ - \# --> the number of sand grains on that square
  - max --> the maximum number of grains that square can hold, after which it topples
 
 
